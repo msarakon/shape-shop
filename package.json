@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp serve",
-    "test": "./node_modules/karma/bin/karma start ./karma.conf.js"
+    "test": "node_modules/karma/bin/karma start karma.conf.js"
   },
   "author": "",
   "license": "MIT",
