@@ -11,7 +11,9 @@ Install node on your machine. On MacOS on good way of doing this would be [nvm](
 1. Run `npm install` in the project root (i.e. folder where package.json file is)
 2. `npm start` will start local node server that uses HMR to reload any changes
 
-You can access JSON under [http://localhost:3000/mock-api/products.json](http://localhost:3000/mock-api/products.json).
+You can access JSON under [http://localhost:3000/api/products](http://localhost:3000/api/products).
+
+Same information is found from `./products.js`.
 
 ## Notes
 
@@ -31,7 +33,7 @@ On webpack & SASS: https://github.com/webpack-contrib/sass-loader
 
 There's only 1 example test in this project, but write more as you see fit. We are using Jest, it's easy to get working and the documentation is good: [https://facebook.github.io/jest/](https://facebook.github.io/jest/)
 
-Test(s) can be run with `npm run test`. Tests are located under ./test -folder. Name your tests as `_nameOfTest_.spec.js`. You can use any testing framework you like, but Jest is preconfigured.
+Test(s) can be run with `npm test`. Tests are located under `/test` -folder. Name your tests as `_nameOfTest_.test.js`. You can use any testing framework you like, but Jest is preconfigured.
 
 # Changelog
 10.10.2017 - Updated the project for webpack and Jest. Added layouts to git.
