@@ -16,6 +16,7 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './dist',
     port: 8484,
+    open: true,
 
     // Mock API
     before: (app) => {
