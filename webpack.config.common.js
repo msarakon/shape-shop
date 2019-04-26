@@ -37,7 +37,10 @@ module.exports = {
       {
         test: /\.vue$/,
         exclude: /node_modules/,
-        loader: 'vue-loader'
+        use: [
+          'vue-loader',
+          'vue-svg-inline-loader'
+        ]
       },
       {
         test: /\.scss$/,
@@ -51,10 +54,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
       }
     ]
   },
