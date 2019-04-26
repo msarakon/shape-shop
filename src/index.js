@@ -1,10 +1,5 @@
-import './styles/main.scss'
+import Vue from 'vue';
+import App from './components/app.vue';
 
-const mySampleComponent = () => {
-  const element = document.createElement('h1')
-  element.innerHTML = 'Whee - The most definitive shape store in the world'
-  element.classList.add('my-sample-component')
-  return element
-}
-
-document.body.appendChild(mySampleComponent())
+const vm = new Vue({ render: createElem => createElem(App) });
+vm.$mount('#app');

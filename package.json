@@ -12,6 +12,9 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js"
   },
+  "dependencies": {
+    "vue": "2.6.10"
+  },
   "devDependencies": {
     "@babel/core": "7.4.3",
     "@babel/preset-env": "7.4.3",
@@ -27,6 +30,8 @@
     "style-loader": "0.23.1",
     "svg-inline-loader": "0.8.0",
     "uglifyjs-webpack-plugin": "2.1.2",
+    "vue-loader": "15.7.0",
+    "vue-template-compiler": "2.6.10",
     "webpack": "4.30.0",
     "webpack-cli": "3.3.1",
     "webpack-dev-server": "3.3.1",
