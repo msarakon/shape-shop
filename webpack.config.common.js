@@ -54,6 +54,11 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpe?g|gif|png)/,
+        exclude: /node_modules/,
+        loader: 'file-loader'
       }
     ]
   },

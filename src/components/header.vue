@@ -1,14 +1,14 @@
 <template>
     <div class="header">
         <div class="header-container">
-            <div class="title header-col">
-                whee
+            <div class="header-left">
+                <span class="title">whee</span>
+                <span class="subtitle">
+                    <span>The most definitive shape store in the world</span>
+                </span>
             </div>
-            <div class="subtitle header-col">
-                The most definitive shape store in the world
-            </div>
-            <div class="shopping-cart header-col">
-                <div class="shopping-cart-container">
+            <div class="header-right">
+                <div class="shopping-cart">
                     <div class="shopping-cart-text">
                         <span>No items in cart</span>
                     </div>
@@ -36,7 +36,10 @@
     .header {
         background-color: $gray;
         width: 100%;
-        height: 100px;
+        height: 130px;
+        background-image: url('../assets/header-bg.png');
+        background-position: bottom;
+        background-repeat: repeat-x;
     }
 
     .header-container {
@@ -45,21 +48,31 @@
         padding: .5em 2em 0 2em;
     }
 
-    .header-col {
+    .header-left,
+    .header-right {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    .header-left {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
     .title {
         font-family: 'Pacifico', cursive;
         font-size: 4em;
-        width: 20%;
-        line-height: 1em;
+        line-height: 1.1em;
+        margin-right: .7em;
     }
 
     .subtitle {
-        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .subtitle,
@@ -67,11 +80,11 @@
         font-style: italic;
     }
 
-    .shopping-cart {
-        width: 40%;
+    .header-right {
+        width: 30%;
     }
 
-    .shopping-cart-container {
+    .shopping-cart {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
