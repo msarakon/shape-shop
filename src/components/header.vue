@@ -10,7 +10,7 @@
             <div class="header-right">
                 <div class="shopping-cart">
                     <div class="shopping-cart-text">
-                        <span>No items in cart</span>
+                        <span>{{ shoppingCart.itemCount || 'No' }} items in cart</span>
                     </div>
                     <div class="shopping-cart-icon">
                         <img svg-inline 
@@ -25,8 +25,15 @@
 </template>
 
 <script>
+    import { shoppingCart } from '../data-store.js';
+
     export default {
-        name: 'AppHeader'
+        name: 'AppHeader',
+        data() {
+            return {
+                shoppingCart: shoppingCart
+            }
+        }
     }
 </script>
 

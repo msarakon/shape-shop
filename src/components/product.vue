@@ -19,13 +19,15 @@
                 {{ product.price }} €
             </div>
             <div class="product-add-to-cart">
-                <div class="add-to-cart-button">ADD TO CART</div>
+                <div @click="addToCart()" class="add-to-cart-button">ADD TO CART</div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import { shoppingCart } from '../data-store.js';
+
     export default {
         name: 'Product',
         props: {
@@ -41,6 +43,9 @@
                 } catch (ex) {
                     return require('../assets/product-images/no_image.png');
                 }
+            },
+            addToCart() {
+                shoppingCart.addItem(this.product);
             }
         }
     }
