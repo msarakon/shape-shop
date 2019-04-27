@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" :class="{ 'fixed': fixedHeader }">
         <div class="header-container">
             <div class="header-left">
                 <span class="title">whee</span>
@@ -31,8 +31,14 @@
         name: 'AppHeader',
         data() {
             return {
-                shoppingCart: shoppingCart
+                shoppingCart: shoppingCart,
+                fixedHeader: false
             }
+        },
+        mounted() {
+            window.onscroll = () => {
+                this.fixedHeader = document.documentElement.scrollTop > 10;
+            };
         }
     }
 </script>
@@ -47,12 +53,30 @@
         background-image: url('../assets/header-bg.png');
         background-position: bottom;
         background-repeat: repeat-x;
+        transition: all .2s ease-in;
+    }
+
+    .header.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background-image: none;
+        font-size: .9em;
+    }
+
+    .header.fixed + .content {
+        padding-top: 10em;
     }
 
     .header-container {
         display: flex;
         flex-direction: row;
         padding: .5em 2em 0 2em;
+    }
+
+    .header.fixed .header-container {
+        padding: .5em 1em 0 1em;
     }
 
     .header-left,
