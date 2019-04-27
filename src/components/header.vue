@@ -37,7 +37,7 @@
         },
         mounted() {
             window.onscroll = () => {
-                this.fixedHeader = document.documentElement.scrollTop > 10;
+                this.fixedHeader = window.scrollY > 10;
             };
         }
     }
