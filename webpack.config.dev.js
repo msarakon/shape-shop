@@ -9,7 +9,7 @@ const common = require('./webpack.config.common');
 /**
  * Mock API
  */
-const PRODUCTS_LIST = require('./products')
+const MOCK_DATA = require('./mock-data')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -21,7 +21,7 @@ module.exports = merge(common, {
     // Mock API
     before: (app) => {
       app.get('/api/products', (req, res) => {
-        res.json(PRODUCTS_LIST);
+        res.json(MOCK_DATA.products);
       });
     }
   },

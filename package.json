@@ -10,8 +10,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js",
-    "watch": "webpack --watch --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "jest": {
     "transform": {
@@ -20,7 +19,9 @@
     }
   },
   "dependencies": {
-    "vue": "2.6.10"
+    "axios": "0.18.0",
+    "vue": "2.6.10",
+    "vue-axios": "2.1.4"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",

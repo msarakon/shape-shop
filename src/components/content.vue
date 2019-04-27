@@ -10,6 +10,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     import Product from './product.vue';
 
     export default {
@@ -19,8 +20,18 @@
         },
         data() {
             return {
-                products: []
+                products: [],
+                productsLoading: true
             }
+        },
+        created() {
+            axios.get('api/products').then(response => {
+                this.products = response.data;
+                this.productsLoading = false;
+            }).catch(error => {
+                // todo: show error
+                this.productsLoading = false;
+            });
         }
     }
 </script>
