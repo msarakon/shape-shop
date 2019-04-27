@@ -63,7 +63,7 @@
     }
 
     .header-left {
-        width: 70%;
+        width: 60%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -89,7 +89,7 @@
     }
 
     .header-right {
-        width: 30%;
+        width: 40%;
     }
 
     .shopping-cart {
@@ -105,8 +105,8 @@
     }
 
     .shopping-cart-icon {
-        width: 25px;
-        height: 25px;
+        width: 2em;
+        height: 2em;
         background-color: $black;
         border-radius: 50%;
         padding: .7em;
@@ -117,5 +117,18 @@
     .shopping-cart-icon:hover {
         background-color: $hilight;
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 650px) {
+        .subtitle {
+            display: none;
+        }
+        .header-left,
+        .header-right {
+            width: 50%;
+        }
+        .header {
+            height: 100px;
+        }
     }
 </style>

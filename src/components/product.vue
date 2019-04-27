@@ -1,12 +1,12 @@
 <template>
     <div class="product">
-        <div class="product-left">
+        <div class="product-left product-column">
             <img class="product-image"
                  :src="imagePath()"
                  :alt="product.name"
                  :title="product.name" />
         </div>
-        <div class="product-center">
+        <div class="product-center product-column">
             <div class="product-name">
                 {{ product.name }}
             </div>
@@ -14,7 +14,7 @@
                 {{ product.description }}
             </div>
         </div>
-        <div class="product-right">
+        <div class="product-right product-column">
             <div class="product-price">
                 {{ product.price }} €
             </div>
@@ -58,6 +58,13 @@
         display: flex;
         flex-direction: row;
         margin-bottom: 3em;
+        padding: 0 1em;
+    }
+
+    .product-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .product-left {
@@ -66,14 +73,11 @@
 
     .product-image {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
 
     .product-center {
         width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         padding-left: 2em;
     }
 
@@ -81,6 +85,11 @@
         font-size: 2.4em;
         font-weight: bold;
         font-style: italic;
+    }
+
+    .product-name,
+    .product-price {
+        font-size: 2.4em;
         margin-bottom: .5em;
     }
 
@@ -90,15 +99,7 @@
 
     .product-right {
         width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         text-align: right;
-    }
-
-    .product-price {
-        font-size: 2.4em;
-        margin-bottom: .5em;
     }
 
     .add-to-cart-button {
@@ -118,4 +119,16 @@
         color: #fff;
     }
 
+    @media only screen and (max-width: 650px) {
+        .product-name,
+        .product-price {
+            font-size: 1.8em;
+        }
+        .product-description {
+            font-size: .9em;
+        }
+        .add-to-cart-button {
+            font-size: 1em;
+        }
+    }
 </style>

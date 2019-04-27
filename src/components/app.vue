@@ -34,4 +34,10 @@
         height: 100%;
         position: relative;
     }
+
+    @media only screen and (max-width: 650px) {
+        body {
+            font-size: 12px;
+        }
+    }
 </style>
