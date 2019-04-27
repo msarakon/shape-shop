@@ -20,6 +20,12 @@ module.exports = {
       "name": "Triangle",
       "description": "A true classic with three elegant corners.",
       "price": 1009
+    },
+    {
+      "id": 4,
+      "name": "Pentagram",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+      "price": 666
     }
   ]
 }
