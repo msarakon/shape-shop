@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/msarakon/monthly-wages-calculator.svg?branch=master)](https://travis-ci.org/msarakon/monthly-wages-calculator)
+[![Build Status](https://travis-ci.org/msarakon/shape-shop.svg?branch=master)](https://travis-ci.org/msarakon/shape-shop)
 
 # shape-shop
 
