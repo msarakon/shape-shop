@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/msarakon/shape-shop.svg?branch=master)](https://travis-ci.org/msarakon/shape-shop)
+[![Build Status](https://travis-ci.org/msarakon/shape-shop.svg?branch=master)](https://travis-ci.org/msarakon/shape-shop) [![codecov](https://codecov.io/gh/msarakon/shape-shop/branch/master/graph/badge.svg)](https://codecov.io/gh/msarakon/shape-shop)
 
 # shape-shop
 
