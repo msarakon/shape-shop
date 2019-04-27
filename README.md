@@ -1,10 +1,6 @@
-# Whee-project Instructions
+[![Build Status](https://travis-ci.org/msarakon/monthly-wages-calculator.svg?branch=master)](https://travis-ci.org/msarakon/monthly-wages-calculator)
 
-You can use this project base or find a better suited one for your preferred tools. Few good ones are:
-1. vue-cli or others listed here: [vuejs-templates](https://github.com/vuejs-templates)
-2. react-create-app: [Create React App](https://github.com/facebookincubator/create-react-app)
-3. preact-cli: [preact-cli](https://github.com/developit/preact-cli)
-4. ...or anything that you are used to using - there are no limitations here!
+# shape-shop
 
 Install node on your machine. On MacOS on good way of doing this would be [nvm](https://github.com/creationix/nvm).
 
@@ -15,11 +11,6 @@ You can access JSON under [http://localhost:3000/api/products](http://localhost:
 
 Same information is found from `./products.js`.
 
-## Notes
-
-This project is not complete, there are things that are done one-way, but could be done another way etc. Somethings might be incomplete.
-
-
 ## Webpack
 
 Supported loaders are found from `webpack.config.common.js`:
@@ -29,11 +20,10 @@ Supported loaders are found from `webpack.config.common.js`:
 
 On webpack & SASS: https://github.com/webpack-contrib/sass-loader
 
-# Testing
+## Testing
 
-There's only 1 example test in this project, but write more as you see fit. We are using Jest, it's easy to get working and the documentation is good: [https://facebook.github.io/jest/](https://facebook.github.io/jest/)
+    npm test
+    npm test -- --coverage
 
-Test(s) can be run with `npm test`. Tests are located under `/test` -folder. Name your tests as `_nameOfTest_.test.js`. You can use any testing framework you like, but Jest is preconfigured.
-
-# Changelog
+## Changelog
 10.10.2017 - Updated the project for webpack and Jest. Added layouts to git.
