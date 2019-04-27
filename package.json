@@ -16,6 +16,9 @@
     "transform": {
       "^.+\\.js$": "babel-jest",
       ".*\\.vue$": "vue-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif)$": "<rootDir>/test/asset-transformer.js"
     }
   },
   "dependencies": {
@@ -27,6 +30,7 @@
     "@babel/core": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "@vue/test-utils": "1.0.0-beta.29",
+    "axios-mock-adapter": "1.16.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.7.1",
     "babel-loader": "8.0.5",

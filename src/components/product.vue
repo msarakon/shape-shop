@@ -4,8 +4,7 @@
             <img class="product-image"
                  :src="imagePath()"
                  :alt="product.name"
-                 :title="product.name"
-                 @error="'../assets/product-images/1.png'" />
+                 :title="product.name" />
         </div>
         <div class="product-center">
             <div class="product-name">
