@@ -21,7 +21,8 @@
         data() {
             return {
                 products: [],
-                productsLoading: true
+                productsLoading: true,
+                productsError: false
             }
         },
         created() {
@@ -29,7 +30,7 @@
                 this.products = response.data;
                 this.productsLoading = false;
             }).catch(error => {
-                // todo: show error
+                this.productsError = true;
                 this.productsLoading = false;
             });
         }
