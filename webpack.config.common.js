@@ -43,6 +43,11 @@ module.exports = {
         ]
       },
       {
+        test: /\.(vue|js)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+      {
         test: /\.scss$/,
         use: [
           'style-loader',

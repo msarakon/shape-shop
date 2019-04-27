@@ -13,10 +13,12 @@
                         <span>{{ shoppingCart.itemCount || 'No' }} items in cart</span>
                     </div>
                     <div class="shopping-cart-icon">
-                        <img svg-inline 
-                             src="../assets/shopping-cart.svg" 
-                             alt="Shopping cart"
-                             title="Shopping cart" />
+                        <img 
+                            svg-inline 
+                            src="../assets/shopping-cart.svg" 
+                            alt="Shopping cart"
+                            title="Shopping cart"
+                        >
                     </div>
                 </div>
             </div>

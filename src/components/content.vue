@@ -1,10 +1,10 @@
 <template>
     <div class="content">
         <div class="product-list">
-            <product
-                v-for="product in products"
-                :key="product.id"
-                :product="product" />
+            <product v-for="product in products"
+                     :key="product.id"
+                     :product="product"
+            />
         </div>
     </div>
 </template>

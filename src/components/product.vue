@@ -4,7 +4,8 @@
             <img class="product-image"
                  :src="imagePath()"
                  :alt="product.name"
-                 :title="product.name" />
+                 :title="product.name"
+            >
         </div>
         <div class="product-center product-column">
             <div class="product-name">
@@ -19,7 +20,9 @@
                 {{ product.price }} €
             </div>
             <div class="product-add-to-cart">
-                <div @click="addToCart()" class="add-to-cart-button">ADD TO CART</div>
+                <div class="add-to-cart-button" @click="addToCart">
+                    ADD TO CART
+                </div>
             </div>
         </div>
     </div>
