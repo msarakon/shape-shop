@@ -65,7 +65,7 @@
     .title {
         font-family: 'Pacifico', cursive;
         font-size: 4em;
-        line-height: 1.1em;
+        line-height: 1.2em;
         margin-right: .7em;
     }
 
@@ -78,6 +78,7 @@
     .subtitle,
     .shopping-cart {
         font-style: italic;
+        font-size: 1.1em;
     }
 
     .header-right {

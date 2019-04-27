@@ -25,7 +25,7 @@
         margin: 0;
         background-color: #fff;
         font-family: 'Playfair Display', serif;
-        font-size: 16px;
+        font-size: 14px;
         color: $black;
     }
 
