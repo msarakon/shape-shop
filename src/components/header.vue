@@ -2,38 +2,45 @@
     <div class="header" :class="{ 'fixed': fixedHeader }">
         <div class="header-container">
             <div class="header-left">
-                <span class="title">whee</span>
+                <span class="site-title">whee</span>
                 <span class="subtitle">
                     <span>The most definitive shape store in the world</span>
                 </span>
             </div>
             <div class="header-right">
-                <div class="shopping-cart">
+                <div class="shopping-cart-corner">
                     <div class="shopping-cart-text">
-                        <span>{{ shoppingCart.itemCount || 'No' }} items in cart</span>
+                        <span>{{ shoppingCart.itemCount || 'No' }} item(s) in cart</span>
                     </div>
-                    <div class="shopping-cart-icon">
+                    <div class="shopping-cart-icon" @click="openShoppingCart">
                         <img 
                             svg-inline 
                             src="../assets/shopping-cart.svg" 
                             alt="Shopping cart"
-                            title="Shopping cart"
-                        >
+                            title="Shopping cart">
                     </div>
                 </div>
             </div>
+            <transition name="fade">
+                <shopping-cart v-if="shoppingCartOpen" @close="closeShoppingCart" />
+            </transition>
         </div>
     </div>
 </template>
 
 <script>
     import { shoppingCart } from '../data-store.js';
+    import ShoppingCart from './shopping-cart.vue';
 
     export default {
         name: 'AppHeader',
+        components: {
+            ShoppingCart
+        },
         data() {
             return {
                 shoppingCart: shoppingCart,
+                shoppingCartOpen: false,
                 fixedHeader: false
             }
         },
@@ -41,6 +48,14 @@
             window.onscroll = () => {
                 this.fixedHeader = window.scrollY > 10;
             };
+        },
+        methods: {
+            openShoppingCart() {
+                this.shoppingCartOpen = true;
+            },
+            closeShoppingCart() {
+                this.shoppingCartOpen = false;
+            }
         }
     }
 </script>
@@ -64,7 +79,6 @@
         left: 0;
         height: 70px;
         background-image: none;
-        font-size: .9em;
     }
 
     .header.fixed + .content {
@@ -72,6 +86,7 @@
     }
 
     .header-container {
+        position: relative;
         display: flex;
         flex-direction: row;
         padding: .5em 2em 0 2em;
@@ -79,6 +94,11 @@
 
     .header.fixed .header-container {
         padding: .5em 1em 0 1em;
+    }
+
+    .header.fixed .header-left,
+    .header.fixed .header-right {
+        font-size: .9em;
     }
 
     .header-left,
@@ -95,7 +115,7 @@
         justify-content: flex-start;
     }
 
-    .title {
+    .site-title {
         font-family: 'Pacifico', cursive;
         font-size: 4em;
         line-height: 1.2em;
@@ -109,7 +129,7 @@
     }
 
     .subtitle,
-    .shopping-cart {
+    .shopping-cart-corner {
         font-style: italic;
         font-size: 1.1em;
     }
@@ -118,7 +138,7 @@
         width: 40%;
     }
 
-    .shopping-cart {
+    .shopping-cart-corner {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -137,12 +157,20 @@
         border-radius: 50%;
         padding: .7em;
         margin-left: 1.5em;
+        box-sizing: content-box;
         transition: all .2s ease-in;
     }
 
     .shopping-cart-icon:hover {
         background-color: $hilight;
         cursor: pointer;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 
     @media only screen and (max-width: 650px) {
@@ -155,6 +183,9 @@
         }
         .header {
             height: 100px;
+        }
+        .shopping-cart-text {
+            font-size: .9em;
         }
     }
 </style>

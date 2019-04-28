@@ -19,4 +19,15 @@ describe('AppHeader', () => {
         expect(wrapper.vm.fixedHeader).toBeFalsy();
     });
 
+    it('should open the shopping cart', () => {
+        expect(wrapper.vm.shoppingCartOpen).toBeFalsy();
+        wrapper.find('.shopping-cart-icon').trigger('click');
+        expect(wrapper.vm.shoppingCartOpen).toBeTruthy();
+    });
+
+    it('should close the shopping cart', () => {
+        wrapper.vm.closeShoppingCart();
+        expect(wrapper.vm.shoppingCartOpen).toBeFalsy();
+    });
+
 });

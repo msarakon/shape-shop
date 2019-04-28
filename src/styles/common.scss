@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+.title {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 1px solid $black;
+    padding: .5em 1.5em;
+    letter-spacing: 1px;
+    transition: all .2s ease-in;
+}
+
+.button.small {
+    font-size: 1em;
+    padding: .5em 1em;
+}
+
+.button.disabled {
+    pointer-events: none;
+    opacity: .5;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: $hilight;
+    border-color: transparent;
+    color: #fff;
+}

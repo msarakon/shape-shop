@@ -24,11 +24,11 @@ describe('Product', () => {
     it('should add an item to shopping cart', () => {
         expect(shoppingCart.itemCount).toBe(0);
 
-        wrapper.find('.add-to-cart-button').trigger('click');
+        wrapper.find('.product-add-to-cart > .button').trigger('click');
 
         expect(shoppingCart.itemCount).toBe(1);
 
-        wrapper.find('.add-to-cart-button').trigger('click');
+        wrapper.find('.product-add-to-cart > .button').trigger('click');
 
         expect(shoppingCart.itemCount).toBe(2);
     });

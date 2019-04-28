@@ -9,10 +9,10 @@ export const shoppingCart = {
 
     itemCount: 0,
 
-    addItem(item) {
+    addItem(product) {
         let found = false;
         for (let i = 0; i < this.products.length; i++) {
-            if (this.products[i].id === item.id) {
+            if (this.products[i].id === product.id) {
                 this.products[i].count++;
                 found = true;
                 break;
@@ -20,8 +20,9 @@ export const shoppingCart = {
         }
         if (!found) {
             this.products.push({
-                id: item.id,
-                name: item.name,
+                id: product.id,
+                name: product.name,
+                price: product.price,
                 count: 1
             });
         }
@@ -38,6 +39,24 @@ export const shoppingCart = {
                 }
                 break;
             }
+        }
+    },
+
+    removeProduct(id) {
+        for (let i = 0; i < this.products.length; i++) {
+            if (this.products[i].id === id) {
+                this.itemCount = this.itemCount - this.products[i].count;
+                this.products.splice(i, 1);
+                break;
+            }
+        }
+    },
+
+    imagePath(id) {
+        try {
+            return require('./assets/product-images/' + id + '.png');
+        } catch (ex) {
+            return require('./assets/product-images/no_image.png');
         }
     },
 

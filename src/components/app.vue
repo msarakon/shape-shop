@@ -20,6 +20,7 @@
 
 <style lang="scss">
     @import '../styles/_colors.scss';
+    @import '../styles/common.scss';
 
     body {
         margin: 0;

@@ -3,8 +3,7 @@
         <div class="product-list">
             <product v-for="product in products"
                      :key="product.id"
-                     :product="product"
-            />
+                     :product="product" />
         </div>
     </div>
 </template>
@@ -37,7 +36,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import '../styles/_colors.scss';
 
     .content {

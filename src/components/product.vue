@@ -4,11 +4,10 @@
             <img class="product-image"
                  :src="imagePath()"
                  :alt="product.name"
-                 :title="product.name"
-            >
+                 :title="product.name">
         </div>
         <div class="product-center product-column">
-            <div class="product-name">
+            <div class="product-name title">
                 {{ product.name }}
             </div>
             <div class="product-description">
@@ -20,7 +19,7 @@
                 {{ product.price }} €
             </div>
             <div class="product-add-to-cart">
-                <div class="add-to-cart-button" @click="addToCart">
+                <div class="button" @click="addToCart">
                     ADD TO CART
                 </div>
             </div>
@@ -41,11 +40,7 @@
         },
         methods: {
             imagePath() {
-                try {
-                    return require('../assets/product-images/' + this.product.id + '.png');
-                } catch (ex) {
-                    return require('../assets/product-images/no_image.png');
-                }
+                return shoppingCart.imagePath(this.product.id);
             },
             addToCart() {
                 shoppingCart.addItem(this.product);
@@ -54,7 +49,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import '../styles/_colors.scss';
 
     .product {
@@ -86,8 +81,6 @@
 
     .product-name {
         font-size: 2.4em;
-        font-weight: bold;
-        font-style: italic;
     }
 
     .product-name,
@@ -105,23 +98,6 @@
         text-align: right;
     }
 
-    .add-to-cart-button {
-        display: inline-block;
-        font-size: 1.2em;
-        font-weight: bold;
-        border: 1px solid $black;
-        padding: .5em 1.5em;
-        letter-spacing: 1px;
-        transition: all .2s ease-in;
-    }
-
-    .add-to-cart-button:hover {
-        cursor: pointer;
-        background-color: $hilight;
-        border-color: transparent;
-        color: #fff;
-    }
-
     @media only screen and (max-width: 650px) {
         .product-name,
         .product-price {
@@ -130,7 +106,7 @@
         .product-description {
             font-size: .9em;
         }
-        .add-to-cart-button {
+        .button {
             font-size: 1em;
         }
     }

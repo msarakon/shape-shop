@@ -66,4 +66,17 @@ describe('shoppingCart', () => {
         expect(shoppingCart.products).toEqual([ { id: 1, name: 'Lorem ipsum', count: 1 } ]);
     });
 
+    it('should remove all items of a product', () => {
+        shoppingCart.clear();
+    
+        shoppingCart.addItem(item1);
+        shoppingCart.addItem(item1);
+        shoppingCart.addItem(item1);
+    
+        shoppingCart.removeProduct(1);
+    
+        expect(shoppingCart.itemCount).toBe(0);
+        expect(shoppingCart.products).toEqual([]);
+    });
+
 });
