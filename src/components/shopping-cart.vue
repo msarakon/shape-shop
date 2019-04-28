@@ -56,6 +56,7 @@
         right: 0;
         max-width: 100%;
         padding: 1em 1em 0 1em;
+        z-index: 1000;
     }
 
     .shopping-cart {

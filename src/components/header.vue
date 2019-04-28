@@ -12,7 +12,7 @@
                     <div class="shopping-cart-text">
                         <span>{{ shoppingCart.itemCount || 'No' }} item(s) in cart</span>
                     </div>
-                    <div class="shopping-cart-icon" @click="openShoppingCart">
+                    <div class="shopping-cart-icon" @click="toggleShoppingCart">
                         <div v-if="shoppingCart.itemCount > 0" class="shopping-cart-notif" />
                         <img 
                             svg-inline 
@@ -51,8 +51,8 @@
             };
         },
         methods: {
-            openShoppingCart() {
-                this.shoppingCartOpen = true;
+            toggleShoppingCart() {
+                this.shoppingCartOpen = !this.shoppingCartOpen;
             },
             closeShoppingCart() {
                 this.shoppingCartOpen = false;
@@ -72,6 +72,7 @@
         background-position: bottom;
         background-repeat: repeat-x;
         transition: all .2s ease-in;
+        z-index: 1000;
     }
 
     .header.fixed {

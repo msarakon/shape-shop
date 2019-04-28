@@ -21,8 +21,9 @@ describe('Product', () => {
         expect(wrapper.find('.product-price').text()).toEqual('42 €');
     });
 
-    it('should add an item to shopping cart', () => {
+    it('should add an item to shopping cart', (done) => {
         expect(shoppingCart.itemCount).toBe(0);
+        expect(wrapper.vm.itemAddedNotif).toBeFalsy();
 
         wrapper.find('.product-add-to-cart > .button').trigger('click');
 
@@ -31,6 +32,12 @@ describe('Product', () => {
         wrapper.find('.product-add-to-cart > .button').trigger('click');
 
         expect(shoppingCart.itemCount).toBe(2);
+
+        expect(wrapper.vm.itemAddedNotif).toBeTruthy();
+        setTimeout(() => {
+            expect(wrapper.vm.itemAddedNotif).toBeFalsy();
+            done();
+        }, 500)
     });
 
 });

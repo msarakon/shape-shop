@@ -20,7 +20,12 @@
             </div>
             <div class="product-add-to-cart">
                 <div class="button" @click="addToCart">
-                    ADD TO CART
+                    <transition name="slide-fade">
+                        <div v-if="itemAddedNotif" class="item-added-notif">
+                            Item added!
+                        </div>
+                    </transition>
+                    <span>ADD TO CART</span>
                 </div>
             </div>
         </div>
@@ -38,18 +43,27 @@
                 required: true
             }
         },
+        data() {
+            return {
+                itemAddedNotif: false
+            }
+        },
         methods: {
             imagePath() {
                 return shoppingCart.imagePath(this.product.id);
             },
             addToCart() {
                 shoppingCart.addItem(this.product);
+                this.itemAddedNotif = true;
+                setTimeout(() => this.itemAddedNotif = false, 500);
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/_variables.scss';
+
     .product {
         display: flex;
         flex-direction: row;
@@ -95,6 +109,32 @@
     .product-right {
         width: 50%;
         text-align: right;
+    }
+
+    .item-added-notif {
+        position: absolute;
+        right: 100%;
+        margin-right: .5em;
+        white-space: nowrap;
+        font-size: .9em;
+        font-weight: bold;
+        color: $success;
+    }
+
+    .slide-fade-enter-active {
+        transition: .3s;
+    }
+
+    .slide-fade-leave-active {
+        transition: opacity .5s;
+    }
+
+    .slide-fade-enter {
+        transform: translate(20%, 0);
+    }
+
+    .slide-fade-leave-to, {
+        opacity: 0;
     }
 
     @media only screen and (max-width: 600px) {
