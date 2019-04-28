@@ -18,6 +18,12 @@
     transition: all .2s ease-in;
 }
 
+.button.primary {
+    border-color: transparent;
+    background-color: $hilight2;
+    color: #fff;
+}
+
 .button.small {
     font-size: 1em;
     padding: .5em 1em;
@@ -27,11 +33,15 @@
     pointer-events: none;
     opacity: .5;
     background-color: rgba(0, 0, 0, .1);
+    color: $black;
+    border-color: $black;
 }
 
 .button:hover {
     cursor: pointer;
-    background-color: $hilight;
-    border-color: transparent;
-    color: #fff;
+    background-color: $hilight3;
+}
+
+.button.primary:hover {
+    background-color: darken($hilight2, 20%);
 }

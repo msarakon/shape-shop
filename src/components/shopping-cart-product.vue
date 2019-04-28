@@ -56,6 +56,8 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/_variables.scss';
+
     .product {
         display: flex;
         flex-direction: row;

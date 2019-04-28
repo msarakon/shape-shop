@@ -161,12 +161,12 @@
     }
 
     .shopping-cart-icon:hover {
-        background-color: $hilight;
+        background-color: $hilight2;
         cursor: pointer;
     }
 
     .shopping-cart-notif {
-        background-color: $hilight2;
+        background-color: $hilight;
         width: .8em;
         height: .8em;
         position: absolute;

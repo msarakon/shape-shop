@@ -17,7 +17,7 @@
                 :key="product.id"
                 :product="product" />
             <div class="go-to-checkout">
-                <div class="button" :class="{ 'disabled': cart.itemCount < 1}">
+                <div class="button primary" :class="{ 'disabled': cart.itemCount < 1}">
                     GO TO CHECKOUT
                 </div>
             </div>
