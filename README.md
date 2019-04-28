@@ -2,28 +2,29 @@
 
 # shape-shop
 
-Install node on your machine. On MacOS on good way of doing this would be [nvm](https://github.com/creationix/nvm).
+### :runner: How to run
+
+Node.js is required (https://nodejs.org/en/)
 
 1. Run `npm install` in the project root (i.e. folder where package.json file is)
 2. `npm start` will start local node server that uses HMR to reload any changes
 
-You can access JSON under [http://localhost:3000/api/products](http://localhost:3000/api/products).
+### :mag_right: Testing
 
-Same information is found from `./products.js`.
+- Run automated tests with `npm test`
+- Additionally, you can check the test coverage with `npm test -- --coverage`
 
-## Webpack
+### :herb: Dependencies
 
-Supported loaders are found from `webpack.config.common.js`:
-- SASS, CSS
-- SVG
-- ES2015+ via Babel
+- Vue (JS framework)
+- Axios (HTTP client)
+- Sass (CSS extension)
+- Webpack (module bundling)
+- Jest (automated tests)
+- Eslint (static code analysis)
+- Babel (ECMAScript 6 backwards compatibility)
 
-On webpack & SASS: https://github.com/webpack-contrib/sass-loader
+### :page_with_curl: Changelog
 
-## Testing
-
-    npm test
-    npm test -- --coverage
-
-## Changelog
-10.10.2017 - Updated the project for webpack and Jest. Added layouts to git.
+- 28.04.2019 - Implemented initial user interface based on the layout concept.
+- 10.10.2017 - Updated the project for webpack and Jest. Added layouts to git.
