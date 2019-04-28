@@ -47,7 +47,7 @@
         },
         mounted() {
             window.onscroll = () => {
-                this.fixedHeader = window.scrollY > 0;
+                this.fixedHeader = window.scrollY > 10;
             };
         },
         methods: {
@@ -61,13 +61,16 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import '../styles/_variables.scss';
 
     .header {
+        position: fixed;
+        top: 0;
+        left: 0;
         background-color: $gray;
         width: 100%;
-        height: 8.5em;
+        height: $header-height;
         background-image: url('../assets/header-bg.png');
         background-position: bottom;
         background-repeat: repeat-x;
@@ -76,15 +79,8 @@
     }
 
     .header.fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
         height: 5.5em;
         background-image: none;
-    }
-
-    .header.fixed + .content {
-        padding-top: 10.5em;
     }
 
     .header-container {

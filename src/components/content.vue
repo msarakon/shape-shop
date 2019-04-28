@@ -16,7 +16,9 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/_variables.scss';
+
     .content {
-        padding-top: 2em;
+        padding-top: $header-height + 2em;
     }
 </style>
