@@ -186,7 +186,7 @@
         transform: translate(0, -20%);
     }
 
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: 600px) {
         .subtitle {
             display: none;
         }

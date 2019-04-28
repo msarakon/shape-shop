@@ -36,7 +36,7 @@
         position: relative;
     }
 
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: 600px) {
         body {
             font-size: 12px;
         }

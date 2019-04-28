@@ -53,6 +53,7 @@
     .product {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         margin-bottom: 3em;
         padding: 0 1em;
     }
@@ -96,16 +97,22 @@
         text-align: right;
     }
 
-    @media only screen and (max-width: 650px) {
-        .product-name,
+    @media only screen and (max-width: 600px) {
+        .product-left {
+            width: 25%;
+        }
+        .product-center {
+            width: 75%;
+        }
+        .product-right {
+            width: 100%;
+            text-align: center;
+        }
+        .product-name {
+            font-size: 2em;
+        }
         .product-price {
-            font-size: 1.8em;
-        }
-        .product-description {
-            font-size: .9em;
-        }
-        .button {
-            font-size: 1em;
+            font-size: 1.5em;
         }
     }
 </style>
