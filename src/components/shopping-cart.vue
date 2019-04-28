@@ -12,44 +12,10 @@
                     @click="close">
             </div>
             <div v-if="cart.products.length < 1">No items added.</div>
-            <div
+            <shopping-cart-product
                 v-for="product in cart.products"
                 :key="product.id"
-                class="product">
-                <div>
-                    <img 
-                        class="product-image"
-                        :src="cart.imagePath(product.id)"
-                        :alt="product.name"
-                        :title="product.name">
-                </div>
-                <div class="product-name-container">
-                    <div class="product-name">{{ product.name }}</div>
-                    <div>{{ product.price }} €</div>
-                </div>
-                <div>
-                    <div class="product-actions">
-                        <div class="button small" @click="cart.removeItem(product.id)">
-                            -
-                        </div>
-                        <div class="product-count">
-                            {{ product.count }}
-                        </div>
-                        <div class="button small" @click="cart.addItem(product)">
-                            +
-                        </div>
-                        <div class="button small remove-product-button">
-                            <img
-                                svg-inline 
-                                class="remove-product-icon"
-                                src="../assets/trash.svg" 
-                                alt="Remove this product"
-                                title="Remove this product"
-                                @click="cart.removeProduct(product.id)">
-                        </div>
-                    </div>
-                </div>
-            </div>
+                :product="product" />
             <div class="go-to-checkout">
                 <div class="button" :class="{ 'disabled': cart.products.length < 1}">
                     GO TO CHECKOUT
@@ -60,10 +26,14 @@
 </template>
 
 <script>
+    import ShoppingCartProduct from './shopping-cart-product.vue';
     import { shoppingCart } from '../data-store.js';
 
     export default {
         name: 'ShoppingCart',
+        components: {
+            ShoppingCartProduct
+        },
         data() {
             return {
                 cart: shoppingCart

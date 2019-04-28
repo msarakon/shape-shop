@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import { shoppingCart } from '../src/data-store.js';
 import ShoppingCart from '../src/components/shopping-cart.vue';
 
@@ -8,7 +8,7 @@ describe('ShoppingCart', () => {
     shoppingCart.addItem({ id: 2, name: 'test' });
     shoppingCart.addItem({ id: 1, name: 'foobar' });
 
-    const wrapper = shallowMount(ShoppingCart);
+    const wrapper = mount(ShoppingCart);
 
     it('should display products in the shopping cart', () => {
         expect(wrapper.findAll('.product').length).toBe(2);
