@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <transition name="fade">
+            <transition name="slide">
                 <shopping-cart v-if="shoppingCartOpen" @close="closeShoppingCart" />
             </transition>
         </div>
@@ -166,11 +166,12 @@
         cursor: pointer;
     }
 
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
+    .slide-enter-active {
+        transition: .3s;
     }
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
+
+    .slide-enter {
+        transform: translate(0, -20%);
     }
 
     @media only screen and (max-width: 650px) {
