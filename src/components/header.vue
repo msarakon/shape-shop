@@ -12,13 +12,13 @@
                     <div class="shopping-cart-text">
                         <span>{{ shoppingCart.itemCount || 'No' }} item(s) in cart</span>
                     </div>
-                    <div class="shopping-cart-icon" @click="toggleShoppingCart">
+                    <div
+                        class="shopping-cart-icon"
+                        @click="toggleShoppingCart"
+                        alt="Shopping cart"
+                        title="Shopping cart">
                         <div v-if="shoppingCart.itemCount > 0" class="shopping-cart-notif" />
-                        <img 
-                            svg-inline 
-                            src="../assets/shopping-cart.svg" 
-                            alt="Shopping cart"
-                            title="Shopping cart">
+                        <img svg-inline src="../assets/shopping-cart.svg">
                     </div>
                 </div>
             </div>

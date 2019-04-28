@@ -24,13 +24,10 @@
                 </div>
                 <div
                     class="button small remove-product-button" 
+                    alt="Remove this product"
+                    title="Remove this product"
                     @click="cart.removeProduct(product.id)">
-                    <img
-                        svg-inline 
-                        class="remove-product-icon"
-                        src="../assets/trash.svg" 
-                        alt="Remove this product"
-                        title="Remove this product">
+                    <img svg-inline src="../assets/trash.svg" class="remove-product-icon">
                 </div>
             </div>
         </div>

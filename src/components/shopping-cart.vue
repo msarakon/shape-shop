@@ -6,9 +6,7 @@
                 <img
                     class="close-button"
                     svg-inline 
-                    src="../assets/cross.svg" 
-                    alt="Close"
-                    title="Close"
+                    src="../assets/cross.svg"
                     @click="close">
             </div>
             <div v-if="cart.itemCount < 1">No items added.</div>
