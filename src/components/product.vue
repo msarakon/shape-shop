@@ -20,7 +20,7 @@
             </div>
             <div class="product-add-to-cart">
                 <div class="button" @click="addToCart">
-                    <transition name="slide-fade">
+                    <transition name="fade">
                         <div v-if="itemAddedNotif" class="item-added-notif">
                             Item added!
                         </div>
@@ -118,22 +118,16 @@
         white-space: nowrap;
         font-size: .9em;
         font-weight: bold;
-        color: $success;
+        padding: .2em .5em;
     }
 
-    .slide-fade-enter-active {
-        transition: .3s;
-    }
-
-    .slide-fade-leave-active {
+    .fade-enter-active,
+    .fade-leave-active {
         transition: opacity .5s;
     }
 
-    .slide-fade-enter {
-        transform: translate(20%, 0);
-    }
-
-    .slide-fade-leave-to, {
+    .fade-enter,
+    .fade-leave-to {
         opacity: 0;
     }
 
