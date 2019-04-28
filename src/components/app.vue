@@ -19,13 +19,13 @@
 </script>
 
 <style lang="scss">
-    @import '../styles/_colors.scss';
+    @import '../styles/_variables.scss';
     @import '../styles/common.scss';
 
     body {
         margin: 0;
         background-color: #fff;
-        font-family: 'Playfair Display', serif;
+        font-family: $base-font;
         font-size: 14px;
         color: $black;
     }

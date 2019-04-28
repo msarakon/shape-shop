@@ -50,8 +50,6 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../styles/_colors.scss';
-
     .product {
         display: flex;
         flex-direction: row;

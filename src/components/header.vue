@@ -61,7 +61,7 @@
 </script>
 
 <style lang="scss">
-    @import '../styles/_colors.scss';
+    @import '../styles/_variables.scss';
 
     .header {
         background-color: $gray;
@@ -116,7 +116,7 @@
     }
 
     .site-title {
-        font-family: 'Pacifico', cursive;
+        font-family: $site-title-font;
         font-size: 4em;
         line-height: 1.2em;
         margin-right: .7em;

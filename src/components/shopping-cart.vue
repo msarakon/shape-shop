@@ -48,7 +48,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../styles/_colors.scss';
+    @import '../styles/_variables.scss';
 
     .shopping-cart-container {
         position: absolute;

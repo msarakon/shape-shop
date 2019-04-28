@@ -2,16 +2,16 @@ import { shallowMount } from '@vue/test-utils';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import flushPromises from 'flush-promises';
-import AppContent from '../src/components/content.vue';
+import ProductList from '../src/components/product-list.vue';
 
-describe('AppContent', () => {
+describe('ProductList', () => {
 
     const mock = new MockAdapter(axios);
 
     it('should fetch product information', async () => {
         mock.onGet('api/products').reply(200, [ { id: 1 }, { id: 2 } ]);
 
-        const wrapper = shallowMount(AppContent);
+        const wrapper = shallowMount(ProductList);
 
         expect(wrapper.vm.productsLoading).toBeTruthy();
         expect(wrapper.vm.products.length).toBe(0);
@@ -25,7 +25,7 @@ describe('AppContent', () => {
     it('should set an error flag if fetching for products fails', async () => {
         mock.onGet('api/products').reply(500);
 
-        const wrapper = shallowMount(AppContent);
+        const wrapper = shallowMount(ProductList);
 
         expect(wrapper.vm.productsError).toBeFalsy();
         expect(wrapper.vm.products.length).toBe(0);
