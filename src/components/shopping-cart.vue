@@ -11,13 +11,13 @@
                     title="Close"
                     @click="close">
             </div>
-            <div v-if="cart.products.length < 1">No items added.</div>
+            <div v-if="cart.itemCount < 1">No items added.</div>
             <shopping-cart-product
                 v-for="product in cart.products"
                 :key="product.id"
                 :product="product" />
             <div class="go-to-checkout">
-                <div class="button" :class="{ 'disabled': cart.products.length < 1}">
+                <div class="button" :class="{ 'disabled': cart.itemCount < 1}">
                     GO TO CHECKOUT
                 </div>
             </div>

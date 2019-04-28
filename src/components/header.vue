@@ -13,6 +13,7 @@
                         <span>{{ shoppingCart.itemCount || 'No' }} item(s) in cart</span>
                     </div>
                     <div class="shopping-cart-icon" @click="openShoppingCart">
+                        <div v-if="shoppingCart.itemCount > 0" class="shopping-cart-notif" />
                         <img 
                             svg-inline 
                             src="../assets/shopping-cart.svg" 
@@ -46,7 +47,7 @@
         },
         mounted() {
             window.onscroll = () => {
-                this.fixedHeader = window.scrollY > 10;
+                this.fixedHeader = window.scrollY > 0;
             };
         },
         methods: {
@@ -66,7 +67,7 @@
     .header {
         background-color: $gray;
         width: 100%;
-        height: 130px;
+        height: 8.5em;
         background-image: url('../assets/header-bg.png');
         background-position: bottom;
         background-repeat: repeat-x;
@@ -77,12 +78,12 @@
         position: fixed;
         top: 0;
         left: 0;
-        height: 70px;
+        height: 5.5em;
         background-image: none;
     }
 
     .header.fixed + .content {
-        padding-top: 10em;
+        padding-top: 10.5em;
     }
 
     .header-container {
@@ -142,6 +143,7 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        position: relative;
     }
 
     .shopping-cart-text {
@@ -164,6 +166,16 @@
     .shopping-cart-icon:hover {
         background-color: $hilight;
         cursor: pointer;
+    }
+
+    .shopping-cart-notif {
+        background-color: $hilight2;
+        width: .8em;
+        height: .8em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
     }
 
     .slide-enter-active {
