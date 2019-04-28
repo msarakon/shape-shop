@@ -18,7 +18,8 @@ module.exports = {
         'https://fonts.googleapis.com/css?family=Pacifico',
         'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic',
       ],
-      appMountIds: ['app']
+      appMountIds: ['app'],
+      favicon: 'favicon.ico'
     })
   ],
   output: {
