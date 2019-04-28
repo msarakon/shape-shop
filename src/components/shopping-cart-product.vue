@@ -22,14 +22,15 @@
                 <div class="button small" @click="cart.addItem(product)">
                     +
                 </div>
-                <div class="button small remove-product-button">
+                <div
+                    class="button small remove-product-button" 
+                    @click="cart.removeProduct(product.id)">
                     <img
                         svg-inline 
                         class="remove-product-icon"
                         src="../assets/trash.svg" 
                         alt="Remove this product"
-                        title="Remove this product"
-                        @click="cart.removeProduct(product.id)">
+                        title="Remove this product">
                 </div>
             </div>
         </div>
